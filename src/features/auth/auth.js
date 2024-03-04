@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 /**possible auth states: 
- * 'signedIn' 'signedUp' 'signOut' 'confirnSignUp' 'forgotPassword' 'confirmForgotPassword'
+ * 'signedIn' 'signUp' 'signOut' 'confirnSignUp' 'forgotPassword' 'confirmForgotPassword'
  */
 
 const initialState = {
