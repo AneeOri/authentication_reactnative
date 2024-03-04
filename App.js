@@ -1,4 +1,4 @@
-import RootNavigator from './src/navigation/RootNavigator';
+import RootNavigator from './src/navigation/RootNavigation';
 import { Provider } from 'react-redux';
 import { store } from './src/app/store';
 
