@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch } from "react-redux";
+import { setAuthState } from "../../features/auth/auth";
 import { signIn } from "../../features/auth/auth";
 
 export default function Login(){
@@ -29,7 +30,7 @@ export default function Login(){
       <MyInput label={'Email'} value={token} onChangeText={setToken}/>
       <MyInput label={'Password'} secureTextEntry/>
       <MyButton title={'Sign In'} onPress={() => save(token)}/>
-      <MyButton title={'Sign Up'} onPress={() => navigation.navigate('SignUp')}/>
+      <Button title={'Sign Up'} onPress={() => dispatch(setAuthState('signUp'))}/>
      </View>
     );
 }
