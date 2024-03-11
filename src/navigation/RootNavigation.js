@@ -31,7 +31,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
     if(isLoading) return <Splash/>;
     return(
         <NavigationContainer> 
-            {/*userToken ? <MyDrawer/> : <AuthStack/>*/}
             <AuthStack/>
         </NavigationContainer>
     );
