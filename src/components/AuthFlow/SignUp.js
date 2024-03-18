@@ -18,10 +18,6 @@ export default function SignUp({
       <Text style={globalStyles.title}>SignUp</Text>
       <MyInput label={'Email'} onChangeText={setEmail}/>
       <MyInput label={'Password'} secureTextEntry onChangeText={setPassword}/>
-      <MyInput 
-         label={'Confirm Password'}
-         secureTextEntry 
-         onChangeText={setPassword}/>
       <MyButton title={'SignUp'} onPress={onSignUp}/>
       <Button title={'Sign In'} onPress={() => dispatch(setAuthState('signIn'))}/>
      </View>

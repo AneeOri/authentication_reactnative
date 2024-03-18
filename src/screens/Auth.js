@@ -10,6 +10,7 @@ import {
 } from 'firebase/auth';
 import { useState } from 'react';
 import { Alert } from 'react-native';
+import { validateEmail, validatePassword } from '../utils/validation';
 
 
 export default function Auth(){
@@ -34,6 +35,12 @@ export default function Auth(){
     };
 
     const onSignUp = () => {
+      const errorEmail = validateEmail(email);
+      const errorPassword = validatePassword(password);
+
+      if(errorEmail || errorPassword){
+        Alert.alert(errorEmail, errorPassword);
+      }else{
         if(email !== '' && password !== ''){
           createUserWithEmailAndPassword(auth, email, password)
           .then(user => {
@@ -42,7 +49,7 @@ export default function Auth(){
               dispatch(setAuthState('signedIn'));
           })
           .catch(err => Alert.alert('Login error',  err.message));
-        }
+        }}
       };
 
     const onSignOut = () => {
