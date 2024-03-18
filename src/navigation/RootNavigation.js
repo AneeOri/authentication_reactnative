@@ -22,6 +22,7 @@ import { onAuthStateChanged } from "firebase/auth";
         }
         setIsLoading(false);
      });
+     return unsubscribeAuth; /**des subscribe after unmounting */
    },[]);
 
    useEffect(() => {
